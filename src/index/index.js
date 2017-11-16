@@ -1,0 +1,1 @@
+document.write('社会宝的前端生涯')

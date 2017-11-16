@@ -5,10 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const base = {
 		// 页面多入口文件配置
 	entry: {
-		index: path.join(__dirname, 'src/index/index.js'),
-		enter: path.join(__dirname, 'src/enter/enter.js'),
-		approve: path.join(__dirname, 'src/approve/approve.js'),
-		approveable: path.join(__dirname, 'src/approveable/approveable.js')
+		index: path.join(__dirname, 'src/index/index.js')
 	},
 	  // 输出配置
 	output: {
@@ -43,7 +40,7 @@ const base = {
 				]
   		},
   		{
-  			test: /\.hbs$/,
+  			test: /\.hbs$/, // 配置handlebars
   			use: [
   				'handlebars-loader'
   			]
@@ -74,32 +71,11 @@ const base = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({ // 路径是以上面path中的配置为初始路径
     	title: '商家入驻',
-    	template: './src/component/index.html', // 模板路径是以当前文件夹的根目录来定义的
+    	template: './src/view/index.html', // 模板路径是以当前文件夹的根目录来定义的
     	filename: './index.html',
     	inject: 'body',
     	// showErrors: true,
-    	chunks: ['index'] // 公共全局引入jquery
-    }),
-    new HtmlWebpackPlugin({
-    	title: '商家入驻流程',
-    	template: './src/component/enter.html',
-    	filename: './enter.html',
-    	inject: 'body',
-    	chunks: ['enter'] // 公共全局引入jquery
-    }),
-    new HtmlWebpackPlugin({
-    	title: '实名认证',
-    	template: './src/component/approve.html',
-    	filename: './approve.html',
-    	inject: 'body',
-    	chunks: ['approve'] // 公共全局引入jquery
-    }),
-    new HtmlWebpackPlugin({
-    	title: '实名认证修改',
-    	template: './src/component/approveable.html',
-    	filename: './approveable.html',
-    	inject: 'body',
-    	chunks: ['approveable'] // 公共全局引入jquery
+    	chunks: ['index']
     })
 	]
 }
