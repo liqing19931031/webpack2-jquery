@@ -5,9 +5,12 @@
 ```
 ├── Readme.md                   // help 
 ├── src                         // 配置 
-│   ├── view                    // web静态资源
-│   	└── widget 		            // 公用视图组件
-├── server.js                   // web服务器启动文件
+│   ├── app                     // 脚本文件夹
+│   	└── app.js 		            // 脚本文件
+│   ├── view                    // web静态资源
+│   	└── component 		        // 公用视图组件
+│   ├── widget                  // 公共组件库
+├── server.js                   // web服务器启动文件
 ├── node_modules                
 ├── package.json                // 配置文件
 ├── myPlugin.js                 // webpack公共资源插件
