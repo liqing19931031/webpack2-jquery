@@ -2,15 +2,15 @@
 
 ## 目录结构描述
 
-### ├── Readme.md                   // help
-### ├── src                         // 配置
-### │   ├── view                    // web静态资源
-### │   	└── widget 		            // 公用视图组件
-### ├── server.js                   // web服务器启动文件
-### ├── node_modules                
-### ├── package.json                // 配置文件
-### ├── myPlugin.js                 // webpack公共资源插件
-### ├── webpack.config              // 开发环境配置项
-### ├── webpack.dist                // 生产环境配置项
-### ├── dist                        // 生成静态资源目录
-### └── .babelrc                    // babel转义规则
+├── Readme.md                   // help <br/>
+├── src                         // 配置 <br/>
+│   ├── view                    // web静态资源<br/>
+│   	└── widget 		            // 公用视图组件<br/>
+├── server.js                   // web服务器启动文件<br/>
+├── node_modules                <br/>
+├── package.json                // 配置文件<br/>
+├── myPlugin.js                 // webpack公共资源插件<br/>
+├── webpack.config              // 开发环境配置项<br/>
+├── webpack.dist                // 生产环境配置项<br/>
+├── dist                        // 生成静态资源目录<br/>
+└── .babelrc                    // babel转义规则<br/>
