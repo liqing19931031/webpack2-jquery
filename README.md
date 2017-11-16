@@ -2,6 +2,7 @@
 
 ## 目录结构描述
 
+```
 ├── Readme.md                   // help <br/>
 ├── src                         // 配置 <br/>
 │   ├── view                    // web静态资源<br/>
@@ -14,3 +15,5 @@
 ├── webpack.dist                // 生产环境配置项<br/>
 ├── dist                        // 生成静态资源目录<br/>
 └── .babelrc                    // babel转义规则<br/>
+
+```
