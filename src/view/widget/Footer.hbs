@@ -1,0 +1,26 @@
+<div class="contain clearfix">
+	{{#each data}}
+	<div class="footer-list">
+		<div class="list-title text-center">{{f_nav}}</div>
+		<ul class="list-content">
+		{{#each s_nav}}
+			<li><a href="{{this.link}}">{{this.title}}</a></li>
+		{{/each}}
+		</ul>
+	</div>
+	{{/each}}
+	<div class="footer-end">
+		<div class="list-title">关注我们</div>
+		<div class="icons">
+			<a href=""><i class="glyphicon glyphicon-weibo"></i></a>
+			<a href=""><i class="glyphicon glyphicon-wechart"></i></a>
+		</div>
+		<div>总部：中国杭州拱墅区祥园路45号北部软件园盘石互联网广告大厦</div>
+		<div>传真：+86-571-81951158</div>
+		<div>邮编：3100</div>
+		<div>电话：400-100-1110</div>
+	</div>
+</div>
+<div class="copy-right contain">
+	<div class="text-center">Copyright©2004-2016 浙江盘石信息技术股份有限公司 All Rights Reserved 浙B2-2009</div>
+</div>

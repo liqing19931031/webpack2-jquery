@@ -5,13 +5,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const base = {
 		// 页面多入口文件配置
 	entry: {
-		index: path.join(__dirname, 'src/index/index.js')
+		index: path.join(__dirname, 'src/index/index.js'),
+		economy: path.join(__dirname, 'src/economy/economy.js')
 	},
 	  // 输出配置
 	output: {
 		path: path.join(__dirname, '/dist'),
 		filename: '[name]/[name].js'
 	},
+ 	node: {
+        fs: 'empty'
+    },
 	module: {
 		// 加载器配置
 		rules: [
@@ -42,7 +46,7 @@ const base = {
   		{
   			test: /\.hbs$/, // 配置handlebars
   			use: [
-  				'handlebars-loader'
+  				'handlebars-loader?helperDirs[]=' + __dirname + '/src/helpers'
   			]
   		},
   		{
@@ -76,7 +80,15 @@ const base = {
     	inject: 'body',
     	// showErrors: true,
     	chunks: ['index']
-    })
+    }),
+    new HtmlWebpackPlugin({
+    	title: '商家入驻',
+    	template: './src/view/economy.html',
+    	filename: './economy.html',
+    	inject: 'body',
+    	// showErrors: true,
+    	chunks: ['economy']
+    }),
 	]
 }
 

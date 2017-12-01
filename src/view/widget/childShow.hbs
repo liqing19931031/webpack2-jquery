@@ -1,0 +1,19 @@
+{{#each data}}
+	<div class="child-show-content">
+		<div class="child-show--title">
+			{{title}}
+		</div>
+		{{#if isArry}}
+			<div class="img-group clearfix text-center">
+				{{#each image}}
+				<img src="{{this.img}}" style="display: inline-block;">
+				{{/each}}
+			</div>
+			{{else}}
+			<img src="{{image}}" alt="">
+		{{/if}}
+		<div class="child-show--intro">
+			{{intro}}
+		</div>
+	</div>
+{{/each}}

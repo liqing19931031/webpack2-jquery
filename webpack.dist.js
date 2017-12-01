@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const path = require('path'); // node的path模块一般用于合并路径
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin'); // 资源分类打包
 const MyPlugin = require('./MyPlugin.js')
 
-const components = ['index']
+const components = ['index', 'economy']
 
 let entrys = {} // 路口文件容器
 let plugins = [] // 多页面配置容器
@@ -27,7 +28,7 @@ const base = {
 	entry: entrys,
 	  // 输出配置
 	output: {
-		path: path.resolve(__dirname, '/dist'), // 打包路径修改
+		path: path.resolve(__dirname, 'E:/webpack2.2/dist'), // 打包路径修改
 		filename: '[name]/[name].js'
 	},
 	module: {
@@ -49,22 +50,24 @@ const base = {
 			},
 			{
 				test: /\.less$/, // 预编译 less loader
-				use: [
-					'style-loader',
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: [
 					'css-loader',
 					'less-loader'
-				]
+					]
+				})
   		},
   		{
   			test: /\.hbs$/, // html模板引擎loader
   			use: [
-  				'handlebars-loader'
+  				'handlebars-loader?helperDirs[]=' + __dirname + '/src/helpers'
   			]
   		},
   		{
   			test: /\.(png|jpg)$/,
   			loader: 'url-loader?limit=8192&context=client&name=image/[name].[hash:7].[ext]', // 指定图片路径
-  			options: { publicPath: '../image/' } // 默认添加路径
+  			options: { publicPath: '../images/' } // 默认添加路径
   		}
 		]
 	},
@@ -83,6 +86,7 @@ const base = {
 			new MyPlugin({ // 添加公共文件插件的自定义插件
 	        paths: ['../jQuery.js']
 	    }),
+	    new ExtractTextPlugin('styles.css'),
 	    ...plugins
 	]
 }
