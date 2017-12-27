@@ -1,0 +1,52 @@
+.plate-midle{
+	width: 760px;
+	height: 300px;
+	float: left;
+	position: relative;
+	box-sizing: border-box;
+	a[index-data]{
+		height: 300px;
+		width: 760px;
+		z-index: 0;
+		img{
+			z-index: 0;
+			transition: opacity ease 1s;
+			opacity: 0;
+		}
+		&.on{
+			z-index: 2;
+			img{
+				opacity: 1;
+				z-index: 2;
+			}
+		}
+	}
+	img{
+		position: absolute;
+		border: 0px;
+		top: 0;
+		width: 760px;
+		height: 300px;
+	}
+	.slide-dot{
+		z-index: 99;
+		position: absolute;
+		right: 50px;
+		bottom: 30px;
+		border-radius: 15px;
+		a.dot-item{
+			width: 13px;
+			height: 13px;
+			float: left;
+			box-shadow: 1px 0px 6px rgba(0,0,0,0.5);
+			background-color: white;
+			transition: all 1s;
+			& + .dot-item{
+				margin-left: 8px;
+			}
+			&.on{
+				box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.60) inset;
+			}
+		}
+	}
+}

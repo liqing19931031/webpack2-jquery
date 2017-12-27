@@ -1,0 +1,39 @@
+html,
+body{
+	margin: 0;
+	padding: 0;
+}
+.component{
+	padding-top: 50px;
+	width: 1200px;
+	margin: 0 auto;
+}
+.component-group{
+	overflow: hidden;
+	padding: 20px 10px;
+}
+.component-title{
+	line-height: 50px;
+}
+.button{
+	border: 1px solid;
+	padding: 5px 15px;
+	float: left;
+	cursor: pointer;
+	border-radius: 4px;
+	& + .button{
+		margin-left: 10px;
+	}
+}
+input{
+	display: block;
+	margin-top: 20px;
+}
+.clearfix:after{
+	visibility: hidden;
+ 	display: block;
+ 	font-size: 0;
+ 	content: " ";
+ 	clear: both;
+ 	height: 0;
+}

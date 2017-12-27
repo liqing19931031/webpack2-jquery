@@ -1,4 +1,4 @@
-// require('../styles/all.less');
+require('../styles/all.less');
 var $ = require('jquery');
 
 import { slide } from '../widget/slide';

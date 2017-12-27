@@ -1,0 +1,49 @@
+@keyframes wobble_vertically {
+  16.65% {
+    transform: translateY(6px);
+  }
+  33.3% {
+    transform: translateY(-5px);
+  }
+  49.95% {
+    transform: translateY(4px);
+  }
+  66.6% {
+    transform: translateY(-2px);
+  }
+  83.25% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+i.glyphicon-add{
+  cursor: pointer;
+}
+i.glyphicon-reduce{
+  cursor: pointer;
+}
+i:hover{
+  animation-name: wobble_vertically;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+ul>li{
+  margin-left: 25px;
+}
+li>ul{
+  display: none;
+}
+li.open>ul{
+  display: block;
+}

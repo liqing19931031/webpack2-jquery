@@ -6,7 +6,10 @@ const base = {
 		// 页面多入口文件配置
 	entry: {
 		index: path.join(__dirname, 'src/index/index.js'),
-		economy: path.join(__dirname, 'src/economy/economy.js')
+		economy: path.join(__dirname, 'src/economy/economy.js'),
+		component: path.join(__dirname, 'src/component/component.js'),
+		login: path.join(__dirname, 'src/login/login.js'),
+		register: path.join(__dirname, 'src/register/register.js')
 	},
 	  // 输出配置
 	output: {
@@ -89,6 +92,30 @@ const base = {
     	// showErrors: true,
     	chunks: ['economy']
     }),
+    new HtmlWebpackPlugin({
+    	title: '填坑组件库',
+    	template: './src/view/component.html',
+    	filename: './component.html',
+    	inject: 'body',
+    	// showErrors: true,
+    	chunks: ['component']
+    }),
+    new HtmlWebpackPlugin({
+    	title: '填坑组件库',
+    	template: './src/view/login.html',
+    	filename: './login.html',
+    	inject: 'body',
+    	// showErrors: true,
+    	chunks: ['login']
+    }),
+    new HtmlWebpackPlugin({
+    	title: '填坑组件库',
+    	template: './src/view/register.html',
+    	filename: './register.html',
+    	inject: 'body',
+    	// showErrors: true,
+    	chunks: ['register']
+    })
 	]
 }
 

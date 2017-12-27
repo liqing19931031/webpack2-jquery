@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); // 资源分类打包
 const MyPlugin = require('./MyPlugin.js')
 
-const components = ['index', 'economy']
+const components = ['index', 'economy', 'login', 'register']
 
 let entrys = {} // 路口文件容器
 let plugins = [] // 多页面配置容器

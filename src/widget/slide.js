@@ -1,8 +1,9 @@
 var $ = require('jquery'); // 美猴王轮播组件
 
-var slide = function(form){
+var slide = function(form, delay){
 	this.$element = form;
 	this.index = 1;
+	this.delay = delay || 3000;
 	this.length = this.$element.children().length - 1;
 	this.dothtml = [];
 }
@@ -35,7 +36,7 @@ slide.prototype.startSlide = function() {
 			this.$element.find('[data-index=' + this.index + ']').trigger('mouseover');
 			this.index ++;
 			slidego();
-		}.bind(this), 3000)
+		}.bind(this), this.delay)
 	}.bind(this);
 	slidego();
 }

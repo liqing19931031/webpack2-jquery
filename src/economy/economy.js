@@ -24,15 +24,12 @@ let scrollTo = function(top) {
 }
 
 $('body').on('click', '#shopContent', function() {
-	console.log(2)
 	scrollTo(450)
 })
 $('body').on('click', '#shopChance', function() {
-	console.log(3)
 	scrollTo(1250)
 })
 $('body').on('click', '#customAnswer', function() {
-	console.log(4)
 	scrollTo(850)
 })
 // 子页面展开逻辑
